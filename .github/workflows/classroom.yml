@@ -41,7 +41,7 @@ jobs:
         env:
           VARIANT: v1
           SERVICE_NAME: ticket_service
-          PORT_NUMBER: 8060
+          PORT_NUMBER: 8070
 
       - name: Stop containers
         if: always()
