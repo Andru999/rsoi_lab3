@@ -40,8 +40,8 @@ jobs:
         run: ./scripts/test-script.sh
         env:
           VARIANT: v1
-          SERVICE_NAME: ticket_service
-          PORT_NUMBER: 8070
+          SERVICE_NAME: bonus_service
+          PORT_NUMBER: 8050
 
       - name: Stop containers
         if: always()
