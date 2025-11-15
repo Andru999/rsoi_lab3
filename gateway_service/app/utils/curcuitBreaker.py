@@ -10,11 +10,10 @@ from utils.settings import get_settings
 class CircuitBreaker:
     settings = get_settings()["services"]["gateway"]
 
-    # параметры sliding window
-    WINDOW_SIZE = settings.get("sliding_window_size", 4)               # например 20 последних запросов
-    FAIL_THRESHOLD = settings.get("fail_threshold_percent", 50) / 100   # 0.5 = 50%
+    WINDOW_SIZE = settings.get("sliding_window_size", 4)
+    FAIL_THRESHOLD = settings.get("fail_threshold_percent", 50) / 100
 
-    _services = {}     # host_url → {window, state}
+    _services = {}
     _waiter: Thread = None
     _lock = Lock()
 
